@@ -1,0 +1,26 @@
+# Dependencias y resultados de compilación (se regeneran con npm.cmd install / build)
+node_modules/
+dist/
+coverage/
+
+# Variables de entorno con secretos y datos locales (subir solo las plantillas .env.example)
+.env
+.env.*
+!.env.example
+
+# Herramientas del asistente de IA y documentación interna de trabajo
+.agents/
+.opencode/
+opencode.json
+skills-lock.json
+AGENTS.md
+MEMORY.md
+specs/
+docs/
+
+# Registros y archivos del sistema o del editor
+*.log
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

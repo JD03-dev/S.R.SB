@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #148a55;
+  --color-brand-hover: #0f6b41;
+  --color-brand-strong: #0f6b41;
+  --color-brand-soft: #e4f3ea;
+  --color-canvas: #ededeb;
+  --color-surface: #ffffff;
+  --color-ink: #15201a;
+  --font-sans: "Segoe UI", Arial, sans-serif;
+}
+
+/* Dark theme for the admin panel: overrides the palette used by the utilities. */
+.dark {
+  color-scheme: dark;
+  --color-canvas: #0e1411;
+  --color-surface: #18201c;
+  --color-ink: #e6ede8;
+  --color-brand-hover: #18a565;
+  --color-brand-strong: #7fdcab;
+  --color-brand-soft: #173a29;
+  --color-neutral-50: #1e2722;
+  --color-neutral-100: #253029;
+  --color-neutral-200: #313d36;
+  --color-neutral-300: #45534b;
+  --color-neutral-400: #7c8a82;
+  --color-neutral-500: #9aa79f;
+  --color-neutral-600: #bac4be;
+  --color-amber-50: #33290f;
+  --color-amber-400: #e3a935;
+  --color-amber-700: #f2c66d;
+  --color-amber-800: #f5cf80;
+  --color-amber-900: #f8dc9c;
+  --color-red-50: #3a1717;
+  --color-red-100: #4a1d1d;
+  --color-red-700: #ff9b9b;
+  --color-sky-50: #10283a;
+  --color-sky-700: #8ccfff;
+}
+
+:root { font-family: var(--font-sans); color: var(--color-ink); background: var(--color-canvas); -webkit-font-smoothing: antialiased; }
+body { margin: 0; min-width: 320px; }
+button { cursor: pointer; }
+button, a { -webkit-tap-highlight-color: transparent; }
+:focus-visible { outline: 3px solid #b27e30; outline-offset: 3px; }
+
+dialog::backdrop { background: rgb(10 20 15 / 0.45); backdrop-filter: blur(2px); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
