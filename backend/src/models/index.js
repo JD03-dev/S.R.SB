@@ -47,6 +47,7 @@ export const Reservation = sequelize.define('Reservation', {
   id: id(),
   timeSlotId: required(DataTypes.UUID),
   customerId: required(DataTypes.UUID),
+  customerName: required(DataTypes.STRING(120)),
   code: required(DataTypes.STRING(9)),
   status: { ...required(DataTypes.STRING(16)), defaultValue: 'CONFIRMED' },
   cancelledAt: DataTypes.DATE,

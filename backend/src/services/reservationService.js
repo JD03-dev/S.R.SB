@@ -29,12 +29,12 @@ function requireCode(value) {
 
 // The code is the only secret that allows cancelling, so phone lookups never return it.
 function serializeReservation(reservation, timeZone, { includeCode = true } = {}) {
-  const { slot, customer } = reservation;
+  const { slot } = reservation;
   return {
     id: reservation.id,
     code: includeCode ? reservation.code : null,
     status: reservation.status,
-    name: customer.name,
+    name: reservation.customerName,
     date: slot.day.date,
     start: utcToZonedTime(slot.startsAt, timeZone),
     end: utcToZonedTime(slot.endsAt, timeZone),
@@ -92,6 +92,7 @@ export async function createReservation({ slotId, name, phone } = {}) {
       const reservation = await Reservation.create({
         timeSlotId: slot.id,
         customerId: customer.id,
+        customerName,
         code: await uniqueCode(transaction),
       }, { transaction });
       return reservation.id;
